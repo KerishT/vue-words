@@ -22,8 +22,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
-
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
+  margin: 0;
 }
