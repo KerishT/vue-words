@@ -1,12 +1,14 @@
 <script setup>
-  import Button from "./components/Button.vue"
-
-  const date = new Date()
+  import Card from "./components/Card.vue"
+  import Header from "./components/Header.vue"
 </script>
 
 <template>
-  <span>{{ date }}</span>
-  <Button>Button</Button>
+  <Header />
+
+  <div class="content">
+    <Card :index="1" :label="'Test'" />
+  </div>
 </template>
 
 <style scoped></style>
