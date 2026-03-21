@@ -1,11 +1,12 @@
 <script setup>
-  import Header from "./components/Header.vue"
+  import Button from "./components/Button.vue"
+
+  const date = new Date()
 </script>
 
 <template>
-  <Header />
-
-  <div class="content"></div>
+  <span>{{ date }}</span>
+  <Button>Button</Button>
 </template>
 
 <style scoped></style>
