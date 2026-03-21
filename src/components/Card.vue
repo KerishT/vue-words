@@ -11,11 +11,16 @@
     },
   })
 
-  const emit = defineEmits(["revert, changeStatus"])
+  const emit = defineEmits(["revert", "changeStatus"])
+
+  const onRevert = () => {
+    emit("revert")
+    emit("changeStatus")
+  }
 </script>
 
 <template>
-  <article class="card">
+  <article class="card" @click="onRevert">
     <div class="content">
       <span class="index">{{ index }}</span>
       <!-- <span class="status">
