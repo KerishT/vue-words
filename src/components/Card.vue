@@ -2,11 +2,20 @@
   import IconTick from "../assets/icons/IconTick.vue"
   import IconClose from "../assets/icons/IconClose.vue"
 
-  const { index, label } = defineProps({
+  const { index, word } = defineProps({
     index: {
       type: Number,
     },
-    label: {
+    word: {
+      type: String,
+    },
+    translation: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    status: {
       type: String,
     },
   })
@@ -27,7 +36,7 @@
         <IconTick />
       </span> -->
 
-      <span class="label">{{ label }}</span>
+      <span class="word">{{ word }}</span>
 
       <span class="action">
         <span>Перевернуть</span>
@@ -83,7 +92,7 @@
     height: 48px;
   }
 
-  .label {
+  .word {
     font-size: 18px;
   }
 

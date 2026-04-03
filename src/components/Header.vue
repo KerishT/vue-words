@@ -1,12 +1,19 @@
 <script setup>
   import Score from "./Score.vue"
+
+  const { score } = defineProps({
+    score: {
+      type: Number,
+      default: 0,
+    },
+  })
 </script>
 
 <template>
   <header class="header">
     <span class="logo">Запомни слово</span>
 
-    <Score />
+    <Score :value="score" />
   </header>
 </template>
 
