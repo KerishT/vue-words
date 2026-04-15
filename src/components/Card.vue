@@ -32,18 +32,23 @@
   <article class="card" @click="onRevert">
     <div class="content">
       <span class="index">{{ index }}</span>
-      <!-- <span class="status">
-        <IconTick />
-      </span> -->
+      <span class="status">
+        <IconTick v-if="status === 'success'" />
+        <IconClose v-if="status === 'error'" />
+      </span>
 
       <span class="word">{{ word }}</span>
 
       <span class="action">
-        <span>Перевернуть</span>
-        <!-- <div class="statuses">
+        <span v-if="state !== 'opened'">{{
+          status === "success" || status === "error"
+            ? "Завершить"
+            : "Перевернуть"
+        }}</span>
+        <div v-else class="statuses">
           <IconClose />
           <IconTick />
-        </div> -->
+        </div>
       </span>
     </div>
   </article>
@@ -55,7 +60,8 @@
     background-color: var(--white);
     box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
     border-radius: 16px;
-    height: 250px;
+    width: 250px;
+    height: 370px;
     cursor: pointer;
   }
 
